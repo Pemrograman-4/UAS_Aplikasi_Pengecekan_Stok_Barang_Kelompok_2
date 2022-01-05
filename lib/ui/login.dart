@@ -10,18 +10,18 @@ import 'package:gilbert_handaya_19411063/const/collor.dart';
 import 'package:gilbert_handaya_19411063/server/server.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class loginview extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _loginviewState createState() => _loginviewState();
+  _LoginState createState() => _LoginState();
 }
 
-class _loginviewState extends State<loginview> {
+class _LoginState extends State<LoginPage> {
 
   TextEditingController controlleremail = new TextEditingController();
   TextEditingController controllerpassword = new TextEditingController();
 
-  void ShowSnackbar(BuildContext context, Message, color) {
-    final snackBar = SnackBar(content: Text(Message), backgroundColor: color,);
+  void showSnakbar(BuildContext context, Message, color) {
+    final snackBar = SnackBar(content: Text(Message), backgroundColor: color);
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
@@ -29,25 +29,28 @@ class _loginviewState extends State<loginview> {
     String email = controlleremail.text;
     String password = controllerpassword.text;
     var url = UrlServer + "users/sign-in";
-    if (email.isEmpty||password.isEmpty) {
-      Navigator.of(context, rootNavigator: true).pop();
-      ShowSnackbar(context, 'Field Cannot be Empty', ErrorColor);
-    } else {
+    if (email.isEmpty) {
+      // Navigator.of(context, rootNavigator: true).pop();
+      showSnakbar(context, 'Email Tidak Boleh Kosong !', ErrorColor);
+    }else if(password.isEmpty) {
+      showSnakbar(context, 'Password Tidak Boleh Kosong !', ErrorColor);
+    }else {
       final response = await http.post(Uri.parse(url), body: {
         "email": email,
         "password": password
       });
       var result = convert.jsonDecode(response.body);
+      print(result);
       String Message = result['message'];
       if (result['status']) {
-        Navigator.of(context, rootNavigator: true).pop();
-        ShowSnackbar(context, Message, SuccesColor);
+        // Navigator.of(context, rootNavigator: true).pop();
+        showSnakbar(context, Message, SuccesColor);
         SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setBool('isLogin', true);
-        await prefs.setString('_id', result['user']['id']);
+        await prefs.setString('_id', result['user']['_id']);
         await prefs.setString('nama', result['user']['nama']);
         await prefs.setString('email', result['user']['email']);
-        await prefs.setInt('telp', result['user']['telp']);
+        await prefs.setString('telp', result['user']['telp']);
         await prefs.setString('password', result['user']['password']);
         var _duration = const Duration(seconds: 1);
         Timer(_duration, () {
@@ -57,100 +60,84 @@ class _loginviewState extends State<loginview> {
                   builder: (BuildContext context) => homepage()));
         });
       } else {
-        Navigator.of(context, rootNavigator: true).pop();
-        ShowSnackbar(context, Message, ErrorColor);
+        // Navigator.of(context, rootNavigator: true).pop();
+        showSnakbar(context, Message, ErrorColor);
         print(Message);
       }
     }
+
   }
+
+
 
   @override
   Widget build(BuildContext context) {
-    final urlImage1='assets/LOGO-UBL.png';
-
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-              margin: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Theme.of(context).primaryColor,
-                boxShadow: [
-                  BoxShadow(
-                    color: Theme.of(context).hintColor.withOpacity(0.2),
-                    offset: Offset(0, 10),
-                    blurRadius: 20,
-                  )
-                ]
-              ),
+            Padding(
+              padding: const EdgeInsets.only(top: 60.0, bottom: 15),
               child: Center(
-                child: SizedBox(
+                child: Container(
                     width: 150,
                     height: 150,
-                    /*decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(50.0)),*/
-                    child: Image(
-                      image: AssetImage('assets/LOGO-UBL.png'),)
-                ),
+                    // decoration: BoxDecoration(
+                    //     color: Colors.red,
+                    //     borderRadius: BorderRadius.circular(50.0)),
+                    child: Image.asset('assets/icon.png')),
               ),
             ),
             const Padding(
               padding: EdgeInsets.only(top: 10, bottom: 10),
               child: Center(
                 child: Text(
-                  'Log In',
+                  'Masuk',
                   style: (TextStyle(
                       color: Colors.blue, fontSize: 25, fontFamily: 'Raleway')),
                 ),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 controller: controlleremail,
                 autofocus: true,
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
+                        borderRadius:  BorderRadius.all(
                             Radius.circular(10.0))),
                     labelText: 'Email',
-                    hintText: 'Enter Email'),
+                    hintText: 'Masukan Email'),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Padding(
-              padding: EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              //padding: EdgeInsets.symmetric(horizontal: 15),
+              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 controller: controllerpassword,
                 autofocus: true,
                 keyboardType: TextInputType.visiblePassword,
-                obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
+                        borderRadius:  BorderRadius.all(
                             Radius.circular(10.0))),
                     labelText: 'Password',
-                    hintText: 'Enter secure password'),
+                    hintText: 'Masukan Pasword'),
               ),
             ),
-            // FlatButton(
-            //   onPressed: () {
-            //     //TODO FORGOT PASSWORD SCREEN GOES HERE
-            //   },
-            // child: Text(
-            //   'Forgot Password',
-            //   style: TextStyle(color: Colors.blue, fontSize: 15),
-            // ),
-            // ),
+            const SizedBox(
+              height: 10,
+            ),
             Container(
               // padding: EdgeInsets.all(10),
               margin: const EdgeInsets.only(top: 20.0),
@@ -161,11 +148,9 @@ class _loginviewState extends State<loginview> {
               child: FlatButton(
                 onPressed: () {
                   Submit(context);
-                  // Navigator.push(
-                  //     context, MaterialPageRoute(builder: (_) => HomePage()));
                 },
                 child: const Text(
-                  'Sign In',
+                  'MASUK',
                   style: TextStyle(color: Colors.white, fontSize: 15),
                 ),
               ),
@@ -176,22 +161,21 @@ class _loginviewState extends State<loginview> {
             FlatButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => registerview()));
+                      context, MaterialPageRoute(builder: (_) => RegisterPage()));
                 },
                 child: const Text(
-                  'Do not have an account yet? Register',
+                  'Belum Punya Akun? Daftar',
                   style: TextStyle(color: Colors.green, fontSize: 15),
                 )),
-            // Text('Do not have an account yet? Register')
+            // Text('Belum Punya Akun? Daftar')
           ],
         ),
       ),
-
     );
   }
 
   Future<void> Submit(BuildContext context) async {
-    try{
+    try {
       Signin();
     } catch (error) {
       print(error);

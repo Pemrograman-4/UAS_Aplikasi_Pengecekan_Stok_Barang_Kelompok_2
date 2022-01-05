@@ -2,7 +2,7 @@
     package="id.ublsisteminformasi.gilbert_handaya_19411063">
    <application
         android:label="gilbert_handaya_19411063"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

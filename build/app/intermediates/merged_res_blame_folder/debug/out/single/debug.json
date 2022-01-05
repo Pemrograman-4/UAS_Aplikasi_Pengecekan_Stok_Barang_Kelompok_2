@@ -8,10 +8,6 @@
         "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
     },
     {
-        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
@@ -20,11 +16,35 @@
         "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_launcher_icon.png.flat",
+        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon.png"
     },
     {
         "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_launch_background.xml.flat",
         "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
+    },
+    {
+        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_launcher_icon.png.flat",
+        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-mdpi\\launcher_icon.png"
+    },
+    {
+        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_launcher_icon.png.flat",
+        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon.png"
+    },
+    {
+        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-hdpi_launcher_icon.png.flat",
+        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon.png"
+    },
+    {
+        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_launcher_icon.png.flat",
+        "source": "E:\\Kuliah\\Pemrograman\\pemrograman4\\gilbert_handaya_19411063\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon.png"
     }
 ]

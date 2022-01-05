@@ -47,7 +47,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Wi
 	android:label
 		ADDED from E:\Kuliah\Pemrograman\pemrograman4\gilbert_handaya_19411063\android\app\src\main\AndroidManifest.xml:4:9-49
 	android:icon
-		ADDED from E:\Kuliah\Pemrograman\pemrograman4\gilbert_handaya_19411063\android\app\src\main\AndroidManifest.xml:5:9-43
+		ADDED from E:\Kuliah\Pemrograman\pemrograman4\gilbert_handaya_19411063\android\app\src\main\AndroidManifest.xml:5:9-45
 activity#id.ublsisteminformasi.gilbert_handaya_19411063.MainActivity
 ADDED from E:\Kuliah\Pemrograman\pemrograman4\gilbert_handaya_19411063\android\app\src\main\AndroidManifest.xml:6:9-34:20
 	android:launchMode

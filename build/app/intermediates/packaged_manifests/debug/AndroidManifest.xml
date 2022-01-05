@@ -16,7 +16,7 @@
     <application
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:label="gilbert_handaya_19411063" >
         <activity
             android:name="id.ublsisteminformasi.gilbert_handaya_19411063.MainActivity"
